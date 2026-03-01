@@ -4,8 +4,14 @@ An interactive web application to visualize guitar scales and modes on the fretb
 
 ## Features
 
-- 🎵 All major scales, minor scales, and modes
-- 🎸 Beautiful interactive fretboard visualization
-- 🎼 Support for 12 root notes and 9 scale types
-- 📱 Responsive design for mobile and desktop
+- 🎼 Support for 12 root notes and 9 scale types:
+    - 'Major'
+    - 'Minor'
+    - 'Pentatonic'
+    - 'Blues'
+    - 'Dorian'
+    - 'Mixolydian'
+    - 'Lydian'
+    - 'Phrygian'
+    - 'Locrian'
 
