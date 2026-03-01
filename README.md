@@ -1,4 +1,4 @@
-# 🎸 Guitar Fretboard Visualizer
+# Guitar Fretboard Visualizer
 
 An interactive web application to visualize guitar scales and modes on the fretboard.
 
