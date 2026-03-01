@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Fretboard Visualizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🎸 Guitar Fretboard Visualizer</h1>
+        <p>Explore scales, modes, and chords on the guitar fretboard</p>
+    </header>
+
+    <main>
+        <div class="controls-card">
+            <div class="controls">
+                <div class="control-group">
+                    <label for="root-note">Root Note:</label>
+                    <select id="root-note">
+                        {% for note in notes %}
+                        <option value="{{ note }}" {% if note == 'C' %}selected{% endif %}>{{ note }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="scale-type">Scale Type:</label>
+                    <select id="scale-type">
+                        {% for scale in scales %}
+                        <option value="{{ scale }}" {% if scale == 'Major' %}selected{% endif %}>{{ scale }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button id="generate-btn" class="generate-btn">Visualize</button>
+            </div>
+        </div>
+
+        <div class="info-section" id="info-section" style="display: none;">
+            <h3 id="scale-title">C Major Scale</h3>
+            <p id="scale-notes">Notes: C, D, E, F, G, A, B, C</p>
+        </div>
+
+        <div class="fretboard-container" id="fretboard-container" style="display: none;">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Generating fretboard...</p>
+            </div>
+            <img id="fretboard-img" src="" alt="Fretboard" style="display: none;">
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎵</div>
+                <h3>All Scales & Modes</h3>
+                <p>Explore major, minor, pentatonic, blues, and all 7 modes of the major scale</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎸</div>
+                <h3>Interactive Visualization</h3>
+                <p>Real-time fretboard generation with beautiful graphics and note markers</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎼</div>
+                <h3>Learn Guitar Theory</h3>
+                <p>Perfect tool for understanding scale patterns and improving your playing</p>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>About This Tool</h2>
+            <p>This interactive guitar fretboard visualizer helps you explore different scales and modes across the entire fretboard. 
+            Whether you're a beginner learning your first scale or an advanced player exploring exotic modes, this tool makes it easy 
+            to visualize note patterns and improve your understanding of music theory.</p>
+            
+            <h3>How to Use</h3>
+            <ol>
+                <li>Select a root note from the dropdown (e.g., C, D, E, etc.)</li>
+                <li>Choose a scale type (Major, Minor, Pentatonic, etc.)</li>
+                <li>Click "Visualize" to see the scale on the fretboard</li>
+                <li>Green circles show all the notes in your selected scale</li>
+            </ol>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created with ❤️ for guitarists | Built with Python, Flask & Matplotlib</p>
+        <p><a href="https://github.com/yourusername/guitar-fretboard" target="_blank">View on GitHub</a></p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
